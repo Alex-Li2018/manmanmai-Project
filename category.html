@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+   <link rel="stylesheet/less" href="./less/category.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+</head>
+<body>
+   <!-- 头部区域 -->
+   <header id="header">
+      <section id="headerUp">
+         <!-- logo 设计 -->
+         <h4>
+             <a href="#"><img src="./images/header_logo.png" alt=""></a>
+         </h4>
+         <!-- App下载 -->
+         <a href="#">
+             <img src="./images/header_app.png" alt="">
+         </a>
+      </section>
+      <section id="headerDown">
+         <input type="search"  id="search" placeholder="请输入你想比价的商品">
+         <button>搜索</button>   
+      </section>
+   </header>	
+	<!-- 主体区域 -->
+	<main id="main">
+		<section id="brief">
+			<div class="briefIn">
+				<!-- 商品的头部 -->
+				<div class="productList">
+					<div class="title">
+						<a href="#">大家电</a>
+					</div>
+				</div>	
+				<!-- 商品的具体信息 -->
+				<table class="productDetail" style="display: table;">
+					<tbody>
+						<tr>                
+							<td><a href="Prolist.aspx?id=4">平板电视</a></td>                
+							<td><a href="Prolist.aspx?id=5">空调</a></td>                
+							<td><a href="Prolist.aspx?id=63">家庭影院</a></td>            
+						</tr>
+						<tr>                
+						  	<td><a href="Prolist.aspx?id=6">冰箱</a></td>                
+						  	<td><a href="Prolist.aspx?id=62">DVD高清播放器</a></td>              
+						  	<td><a href="Prolist.aspx?id=54">音响/音箱</a></td>            
+						</tr>
+						<tr>                
+							<td><a href="Prolist.aspx?id=7">洗衣机</a></td>                
+							<td><a href="Prolist.aspx?id=8">热水器</a></td>                
+							<td><a href="Prolist.aspx?id=68">酒柜/冰吧/冷柜</a></td>            
+						</tr>
+						<tr>               
+							<td><a href="Prolist.aspx?id=992">消毒柜</a></td>
+							<td></td>
+							<td></td>       
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+	</main>
+   <!-- 底部区域 -->
+   <footer id="footer">
+     <!-- 品牌排行榜 -->
+     <section  class="main-recommend clearfix">
+         <span>品牌排行榜</span>
+         <img src="./images/more.png" alt="">
+     </section>
+     <!-- 网站底部上半部分 -->
+     <section class="footer-up">
+         <a href="#">登录</a>
+         <a href="#">注册</a>
+         <a class="goTop" href="javascript:;">
+             <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+             返回顶部
+         </a>
+     </section>
+     <!-- 网站底部下半部分 -->
+     <section class="footer-down">
+         <p>
+             <a href="#">手机APP下载</a> 
+             <a href="#">
+                 慢慢买手机版
+             </a> -- 掌上比价平台
+         </p>
+         <p>m.manmanbuy.com</p>
+     </section>
+   </footer>
+
+	<!-- 1. 引入zepto文件 -->
+   <script src="./lib/zepto/zepto.min.js"></script>
+   <!-- 2. 引入自己的js文件 -->
+   <script src="./js/category.js"></script>
+   <!-- 3. 导入模板引擎 -->
+   <script src="./lib/artTemplate/template-web.js"></script>
+
+   <!-- 4.准备一个商品列表模板 -->
+   <script type="text/html" id="tpl-productList">
+   	{{ each list value key }}
+   		<!-- 商品的头部 data-id里面放的是文章的id号码 -->
+			<div class="productList" data-id="{{ value.titleId }}">
+				<div class="title">
+					<a href="#">{{@ value.title }}</a>
+				</div>
+			</div>
+   	{{ /each }}
+   </script>
+
+	<!-- 准备一个商品详细模板 -->
+	<script type="text/html" id="tpl-productDetail">	
+		<!-- 商品的具体信息 -->
+		<table class="productDetail" id="{{@ indexID }}" style="display: none;">
+			<tbody>
+				<% for(var i = 0; i < target; i++){ %>
+					<tr> 
+					 	<% if(!result[i*3]) { %>               
+							<td><a href="#"></a></td>
+						<% }else { %>
+							<td><a href="#"><%= result[i*3].category  %></a></td>
+						<% } %>
+
+						<% if(!result[i*3+1]) { %>               
+							<td><a href="#"></a></td>
+						<% }else { %>
+							<td><a href="#"><%= result[i*3+1].category  %></a></td>
+						<% } %>
+
+						<% if(!result[i*3+2]) { %>               
+							<td><a href="#"></a></td>
+						<% }else { %>
+							<td><a href="#"><%= result[i*3+2].category  %></a></td>
+						<% } %>      
+					</tr>
+				<% } %>
+			</tbody>
+		</table>	
+	</script>
+</body>
+</html>

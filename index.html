@@ -83,7 +83,7 @@
         <section class="footer-up">
             <a href="#">登录</a>
             <a href="#">注册</a>
-            <a href="#">
+            <a class="goTop" href="javascript:;">
                 <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
                 返回顶部
             </a>
@@ -99,6 +99,13 @@
             <p>m.manmanbuy.com</p>
         </section>
     </footer>
+    <!-- 悬窗区域 -->
+    <div class="scrollsidebar" id="scrollsidebar" >
+        <a href="#" class="appDownload">
+            <img src="./images/Applogin.png" alt="">
+        </a>
+        <a href="javascript:;" class="goTop fa fa-arrow-up"></a>
+    </div>
     
     <!-- 1. 引入zepto文件 -->
     <script src="./lib/zepto/zepto.min.js"></script>
@@ -111,7 +118,7 @@
     <script type="text/html" id="tpl-mainNav">
         {{ each result value key }}
             <li>
-                <a href="#">
+                <a href="{{@ value.titlehref }}">
                     <!-- 这里是图片 -->
                     {{@ value.img }}
                     <p>{{ value.name }}</p>

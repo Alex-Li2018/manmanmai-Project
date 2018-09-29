@@ -9,6 +9,11 @@ $(function () {
     //调用方法请求数据渲染图文混排页面
     mmb.get_mainPicTxtData();
    
+    //解决悬浮窗
+    //mmb.scrollMove();
+
+    //一键返回顶部
+    mmb.goTop();
 
 });
 
@@ -31,7 +36,7 @@ MMB.prototype = {
             type : 'get',
             dataType : 'jsonp',
             success : function(result){
-                //console.log(result);
+                console.log(result);
                 var menuHTML = template('tpl-mainNav',result);
                 //console.log(menuHTML);
                 $('#main-menuNav').html(menuHTML);
@@ -56,6 +61,34 @@ MMB.prototype = {
                 //console.log(liHTML);
                 $('.goodslist').html(liHTML);
             }
+        });
+    },
+
+    //悬浮窗解决办法
+    scrollMove : function(){
+        // $(window).on('scroll',function(){
+
+        //     // 获取页面滚动条滚动的高度
+        //     var scrollTop = $('html,body').scrollTop();
+        //     // 获取页面可视区的高度
+        //     var clientHeight = $('html,body').height();
+        //     // 获取悬浮窗元素的高度
+        //     var scrollsidebarHeight = $('#scrollsidebar').height();     
+
+        //     // 获取悬浮窗在页面中的定位位置
+        //     var positionY = parseInt(( clientHeight - scrollsidebarHeight ) /2 + scrollTop);
+
+        //     console.log(positionY);
+        //     //$('#scrollsidebar').css('top',positionY);
+        // });
+    }, 
+
+    //返回顶部解决办法:
+    goTop : function(){
+        //在行内已经阻止了a标签的默认行为
+       //console.log($('.goTop'));
+        $('.goTop').on('click',function(){
+            $('html,body').scrollTop(0);
         });
     }
 }

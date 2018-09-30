@@ -2,6 +2,12 @@
 // 入口函数
 $(function(){
 
+	//一加载之后,就显示加载图片
+	// $('#main').css({
+	// 	background : 'url(./images/loading.gif) center no-repeat',
+	// 	height : '414px'
+	// });
+
 	//创建一个对象
 	var mmb_category = new Category();
 
@@ -74,6 +80,10 @@ Category.prototype = {
 							async : false,
 							data : { titleid : titleid  },
 							success :function(obj) {
+								// $('#main').css({
+								// 	background : '',
+								// 	height : ''
+								// });
 								var target = (obj.result.length%3==0)?obj.result.length/3:Math.ceil(obj.result.length/3);
 								var OBJ = {
 									target : target,
@@ -94,7 +104,7 @@ Category.prototype = {
 				}		
 			}
 		});
-	}
+	},
 
 	//返回顶部解决办法:
    goTop : function(){

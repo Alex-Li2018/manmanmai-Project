@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 1. 引入字体图标 -->
+	<link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.css">
+	<!-- 2.引入商品详情的less文件 -->
+	<link rel="stylesheet/less" href="../less/prolistDetail.less">
+	<!-- 3. 引入解析less的文件 -->
+   <script src="../lib/less/less.js"></script>
+</head>
+<body>
+	
+	<!-- 头部区域 -->
+	<header id="header">
+	  <section id="headerUp">
+	      <!-- logo 设计 -->
+	      <h4>
+	          <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+	      </h4>
+	      <!-- App下载 -->
+	      <a href="#">
+	          <img src="./images/header_app.png" alt="">
+	      </a>
+	  </section>
+	  <section id="headerDown">
+	      <input type="search"  id="search" placeholder="请输入你想比价的商品">
+	      <button>搜索</button>   
+	  </section>
+	</header>
+
+	<!-- 主体区域 -->
+	<main id="main">
+		<!-- 头部导航 -->
+		<section id="nav">
+       	<a href="index.html" class="f12">首页</a> &gt; 
+       	<a href="Prolist.html?categoryid=4" class="f12">平板电视</a> &gt; 
+       	<a href="prolistDetail.html?productId=256" class="f12">海信 55EC500U</a>
+		</section>
+		<!-- 商品详情页面 -->
+		<section class="productDetail">
+			<!-- 上下图文混排的内容 -->
+			<div class="picTxt">
+				<div class="pic">
+					<img src="./images/Thumb_2017090008503540540.jpg" alt="">
+					<a href="#">
+						<img src="./images/sc.jpg" alt="">
+					</a>
+				</div>
+				<div class="txt">
+					海信(Hisense) LED55EC500U 55英寸 4K超高清  智能液晶电视
+				</div>
+				<div class="inf clearfix">
+					<ul>
+	               <li class="price">
+	              		<span>当前最低</span>
+	              		<em>:&nbsp;<i>¥2299.00 </i></em>
+	              	</li>
+	               <li class="comment">
+	              		<span>优选评论</span>
+	              		<em>:&nbsp;4169条</em>
+	              	</li>
+	           	</ul>
+				</div>
+			</div>
+			<!-- tab栏的切换 -->
+			<div class="tab">
+				<ul>
+					<li><a href="#">比价购买</a></li>
+					<li><a href="#">产品参数</a></li>
+					<li><a href="#">优选评价</a></li>
+				</ul>
+			</div>
+			<!-- 所有商城列表 -->
+			<div id="table">
+				<table  width="100%"> 
+			      <tbody>
+			            <tr> 
+			                  <td rowspan="2" class="p_pic" valign="top"> 
+			                        <a href="#" onclick="trackLog('商品购买','比价页面');"> 
+			                              <img src="http://sf.manmanbuy.com/images/sitelogo/13.png">
+			                        </a> 
+			                  </td> 
+			                  <td> 
+			                        <a href="#" target="_blank" onclick="trackLog('商品购买','比价页面');">1号店</a> 
+			                  </td> 
+			                  <td class="red"> ￥6488.00 </td> 
+			                  <td align="center" width="60"> 
+			                        <span style="display: inline-block;width: 56px;height: 24px;border-radius: 6px;text-align: center;line-height: 24px;background-color: #ff5500;color: #fff;font-size: 14px;">去购买</span>    
+			                  </td> 
+			            </tr> 
+			            <tr class="tab2"> 
+			                  <td> </td> 
+			                  <td class="r"> </td> 
+			                  <td></td> 
+			            </tr> 
+			      </tbody>
+				</table> 
+			</div>
+			<!-- 注释说明 -->
+			<div class="note">
+        		<br> * 实际价格以各网站列出的实时售价为准，我们提供的价格可能有数小时至数日的延迟。
+         </div>
+		</section>
+		<!-- 用户评论区域 -->
+		<section class="usercomment">
+			<div class="com-title">优选网友评价</div>
+			<!-- 渲染用户评论的地方 -->
+			<!-- <div class="pj-list">
+				<table>
+					<tbody>
+						<tr>
+							<td align="left">m**5</td>
+							<td align="right">2017/10/10</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<span class="star">
+									<em class="star5"></em>
+								</span>
+							</td>
+							<td align="right">
+								购买自:&nbsp&nbsp京东商城
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pj_C">很好，性价比高，速度快，更优惠点更好</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pj_C">
+								<a href="#">回复</a>
+							</td>
+						</tr>
+					</tbody>
+				</table> -->
+			</div>
+		</section>
+		<!-- 查看更多用户评论 -->
+		<section class="more">
+			<a href="#">查看更多用户评论</a>
+		</section>
+	</main>
+
+	<!-- 底部区域 -->
+	<footer id="footer">
+		<!-- 网站底部上半部分 -->
+		<section class="footer-up">
+		   <a href="#">登录</a>
+		   <a href="#">注册</a>
+		   <a class="goTop" href="javascript:;">
+		       <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+		       返回顶部
+		   </a>
+		</section>
+		<!-- 网站底部下半部分 -->
+		<section class="footer-down">
+		   <p>
+		       <a href="#">手机APP下载</a> 
+		       <a href="#">
+		           慢慢买手机版
+		       </a> -- 掌上比价平台
+		   </p>
+		   <p>m.manmanbuy.com</p>
+		</section>
+	</footer> 
+
+	
+
+	<!-- 1. 引入zepto文件 -->
+   <script src="../lib/zepto/zepto.min.js"></script>
+   <!-- 2. 导入模板引擎 -->
+   <script src="../lib/artTemplate/template-web.js"></script>
+   <!-- 3. 引入自己的js文件 -->
+   <script src="../js/prolistDetail.js"></script>
+
+   <!-- 准备一个图文混排模板 -->
+   <script type="text/html" id='tpl-userComment'>
+	   {{ each result value key }}
+	   	<div class="pj-list">
+				<table>
+					<tbody>
+						<tr>
+							<td align="left">{{@ value.comName}}</td>
+							<td align="right">{{@ value.comTime}}</td>
+						</tr>
+						<tr>
+							<td align="left">
+								<span class="star">
+									<em class="star5"></em>
+								</span>
+							</td>
+							<td align="right">
+								{{@ value.comFrom}}
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pj_C">{{@ value.comContent}}</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="pj_C">
+								<a href="#">回复</a>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		{{ /each }}
+   </script>
+</body>
+</html>

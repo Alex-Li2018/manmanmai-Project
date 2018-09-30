@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>商品列表页面</title>
     <!-- 引入字体图表库 -->
-    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../lib/fontAwesome/css/font-awesome.min.css">
     <!-- 1. 引入less文件 -->
-    <link rel="stylesheet/less" href="./less/Prolist.less">
+    <link rel="stylesheet/less" href="../less/Prolist.less">
     <!-- 2. 引入解析less的文件 -->
-    <script src="./lib/less/less.js"></script>
+    <script src="../lib/less/less.js"></script>
 </head>
 
 <body>
@@ -128,11 +128,11 @@
     </footer> 
 
 	<!-- 1. 引入zepto文件 -->
-   <script src="./lib/zepto/zepto.min.js"></script>
+   <script src="../lib/zepto/zepto.min.js"></script>
    <!-- 2. 导入模板引擎 -->
-   <script src="./lib/artTemplate/template-web.js"></script>
+   <script src="../lib/artTemplate/template-web.js"></script>
    <!-- 3. 引入自己的js文件 -->
-   <script src="./js/Prolist.js"></script>
+   <script src="../js/Prolist.js"></script>
    
 
    <!-- 准备一个模板 -->
@@ -140,7 +140,8 @@
    	{{ each result value key }}	
    		<ul class="goodslist">
                 <li>
-                    <a href="#">
+                    <!-- 页面拼接路径跳转到对应的商品详情列表 -->
+                    <a href="prolistDetail.html?productId={{@ value.productId}}">
                         <div class="pic">
                             {{@  value.productImg }}
                         </div>

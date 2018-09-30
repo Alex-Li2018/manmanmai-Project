@@ -77,6 +77,8 @@
 
 	//渲染页面
 	function successLoad(obj) {
+
+		 console.log(obj); //查看响应体
 	    //渲染数据到页面上
 	    var picTxtHTML = template('tpl-picTxt', obj);
 	    // 渲染数据到页面上

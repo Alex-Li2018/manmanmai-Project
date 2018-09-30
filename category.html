@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<title>Document</title>
+	<title>比价搜索</title>
 	<!-- 引入字体图表库 -->
 	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
 	<!-- 1. 引入less文件 -->
@@ -17,7 +17,7 @@
       <section id="headerUp">
          <!-- logo 设计 -->
          <h4>
-             <a href="#"><img src="./images/header_logo.png" alt=""></a>
+             <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
          </h4>
          <!-- App下载 -->
          <a href="#">
@@ -124,19 +124,19 @@
 					 	<% if(!result[i*3]) { %>               
 							<td><a href="#"></a></td>
 						<% }else { %>
-							<td><a href="#"><%= result[i*3].category  %></a></td>
+							<td><a href="Prolist.html?categoryid={{@ result[i*3].categoryId}}"><%= result[i*3].category  %></a></td>
 						<% } %>
 
 						<% if(!result[i*3+1]) { %>               
 							<td><a href="#"></a></td>
 						<% }else { %>
-							<td><a href="#"><%= result[i*3+1].category  %></a></td>
+							<td><a href="Prolist.html?categoryid={{@ result[i*3+1].categoryId}}"><%= result[i*3+1].category  %></a></td>
 						<% } %>
 
 						<% if(!result[i*3+2]) { %>               
 							<td><a href="#"></a></td>
 						<% }else { %>
-							<td><a href="#"><%= result[i*3+2].category  %></a></td>
+							<td><a href="Prolist.html?categoryid={{@ result[i*3+2].categoryId}}"><%= result[i*3+2].category  %></a></td>
 						<% } %>      
 					</tr>
 				<% } %>

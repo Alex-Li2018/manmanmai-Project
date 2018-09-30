@@ -3,19 +3,22 @@
 $(function(){
 
 	//创建一个对象
-	var mmb_category = new category();
+	var mmb_category = new Category();
 
 	//调用方法渲染商品列表页面
 	mmb_category.getproductData();
 
+	//调用方法返回顶部
+	mmb_category.goTop();
+
 })
 
 
-var category =  function () {
+var Category =  function () {
 	
 }
 
-category.prototype = {
+Category.prototype = {
 
 	baseURL : 'http://localhost:9090/api/',
 
@@ -78,6 +81,7 @@ category.prototype = {
 									//判断手风琴效果的ID
 									indexID : index
 								}
+								console.log(OBJ);
 								//渲染到页面上
 								var productDetailHTML = template('tpl-productDetail',OBJ);	
 								$('.productList').eq(index).after(productDetailHTML);
@@ -91,4 +95,13 @@ category.prototype = {
 			}
 		});
 	}
+
+	//返回顶部解决办法:
+   goTop : function(){
+      //在行内已经阻止了a标签的默认行为
+      //console.log($('.goTop'));
+      $('.goTop').on('click',function(){
+         $('html,body').scrollTop(0);
+      });
+   }
 };

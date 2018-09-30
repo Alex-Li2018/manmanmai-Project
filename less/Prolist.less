@@ -1,0 +1,119 @@
+
+
+@import './base.less';
+
+//主体部分
+#main {
+	//搜索的实现
+	>#searchLi {
+		>ul {
+			display: flex;
+			> li {
+				flex: 1;
+				border-bottom: 1px solid @border-color;
+				a {
+					width: 100%;
+					height: 40px;
+					font-size: 16px;
+					line-height: 40px;
+					display: block;
+					text-align: center;
+				}
+			}
+			.active {
+				>a {
+					color: red;
+				}
+			}
+		}
+	}
+	//图文混排渲染部分
+	> #main-picTxt {
+		> .goodslist {
+			> li {
+				width: 100%;
+				padding: 14px 8px;
+				border-bottom: 1px solid @border-color;
+				> a {
+					width: 100%;
+					display: flex;
+					> .pic {
+						> img {
+							width: 100px;
+							height: 100px;
+						}
+					}
+					> .txt {
+						flex: 1;
+						padding-left: 10px;
+						> .title {
+							font-size: 15px;
+							line-height: 24px;
+							// 利用最小高度撑开内容
+							min-height: 57px;
+							word-break: break-all;
+							color: @font-color;
+							> span {
+								color: #ff6c00;
+							}
+						}
+						> .other {
+							color: #a1a1a1;
+							padding-top: 20px;
+							> .mall {
+								font-size: 12px;
+								float: left;
+							}
+							> .comment {
+								float: right;
+								> i {
+									padding-right: 10px;
+								}
+							}
+						}
+					}
+				} 
+			}
+		}
+	}
+	//分页区域
+	#Paging {
+		padding-top: 20px;
+		background-color: #efefef;
+		> ul {
+			width: 100%;
+			display: flex;
+			> li {
+				flex: 1;
+				height: 33px;
+				position: relative;
+				> a {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%); 
+					width: 82px;
+					height: 33px;
+					line-height: 33px;
+					display: block;
+					text-align: center;
+					border: 1px solid @border-color;
+				}
+				> #selectPage {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%); 
+					border: 1px solid #bababa;
+					font-size: 16px;
+					width: 95px;
+					height: 34px;
+				}
+			}
+		}
+	}
+}
+
+//底部页面
+#footer {
+	background-color: #efefef;
+}
+

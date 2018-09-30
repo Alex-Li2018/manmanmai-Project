@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- 不加视口会默认以网页视口打开 -->
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>商品列表页面</title>
+    <!-- 引入字体图表库 -->
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <!-- 1. 引入less文件 -->
+    <link rel="stylesheet/less" href="./less/Prolist.less">
+    <!-- 2. 引入解析less的文件 -->
+    <script src="./lib/less/less.js"></script>
+</head>
+
+<body>
+
+	<!-- 头部区域 -->
+	 <header id="header">
+	     <section id="headerUp">
+	         <!-- logo 设计 -->
+	         <h4>
+	             <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+	         </h4>
+	         <!-- App下载 -->
+	         <a href="#">
+	             <img src="./images/header_app.png" alt="">
+	         </a>
+	     </section>
+	     <section id="headerDown">
+	         <input type="search"  id="search" placeholder="请输入你想比价的商品">
+	         <button>搜索</button>   
+	     </section>
+    </header>
+
+    <!-- 主体部分 -->
+    <main id="main">
+    	<!-- 搜索条件 -->
+    		<section id="searchLi">
+    			<ul>
+    				<li class="active"><a href="#">综合</a></li>
+    				<li><a href="#">销量</a></li>
+    				<li><a href="#">价格</a></li>
+    				<li>
+    					<a href="#">
+    						<i class="fa fa-space-shuttle"></i>
+    						筛选
+    					</a>
+    				</li>
+    			</ul>
+    		</section>
+    	<!-- 图文混排 -->
+        <section id="main-picTxt">
+            <ul class="goodslist">
+                <li>
+                    <a href="#">
+                        <div class="pic">
+                            <img src="./images/Thumb_2018090019593873636.jpg" alt="">
+                        </div>
+                        <div class="txt">
+                            <div class="title">
+                                yassecoco 女士中筒袜 5双 
+                                <span>19.8元包邮(需用券)</span>
+                            </div>
+                            <div class="other clearfix">
+                                <span class="mall">天猫旗舰店 | 09-27 20:00</span>
+                                <span class="comment"><i class="fa fa-camera-retro"></i>0</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+      <!-- 分页实现 -->
+      	<section id="Paging">
+      		<ul>
+      			<li><a href="javascript:;" onclick="getPreProductlistData()" >上一页</a></li>
+      			<li>
+                    <select id="selectPage" >   
+                        <!-- <option selected="selected" disabled="disabled"  style='display: none' value=''></option>   -->                       
+                        <option  value="1">1/19</option>               
+                        <option value="2">2/19</option>                            
+                        <option value="3">3/19</option>                            
+                        <option value="4">4/19</option>                            
+                        <option value="5">5/19</option>                            
+                        <option value="6">6/19</option>                            
+                        <option value="7">7/19</option>                            
+                        <option value="8">8/19</option>                            
+                        <option value="9">9/19</option>                            
+                        <option value="10">10/19</option>                            
+                        <option value="11">11/19</option>                            
+                        <option value="12">12/19</option>                            
+                        <option value="13">13/19</option>                            
+                        <option value="14">14/19</option>                            
+                        <option value="15">15/19</option>                            
+                        <option value="16">16/19</option>                            
+                        <option value="17">17/19</option>                           
+                        <option value="18">18/19</option>                            
+                        <option value="19">19/19</option>                        
+                    </select>       
+                </li>
+      			<li><a href="javascript:;" onclick="getNextProductlistData()">下一页</a></li>
+      		</ul>
+      	</section>
+    </main>
+
+   <!-- 底部区域 -->
+    <footer id="footer">
+        <!-- 网站底部上半部分 -->
+        <section class="footer-up">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a class="goTop" href="javascript:;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+                返回顶部
+            </a>
+        </section>
+        <!-- 网站底部下半部分 -->
+        <section class="footer-down">
+            <p>
+                <a href="#">手机APP下载</a> 
+                <a href="#">
+                    慢慢买手机版
+                </a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </section>
+    </footer> 
+
+	<!-- 1. 引入zepto文件 -->
+   <script src="./lib/zepto/zepto.min.js"></script>
+   <!-- 2. 导入模板引擎 -->
+   <script src="./lib/artTemplate/template-web.js"></script>
+   <!-- 3. 引入自己的js文件 -->
+   <script src="./js/Prolist.js"></script>
+   
+
+   <!-- 准备一个模板 -->
+   <script type="text/html" id="tpl-picTxt">
+   	{{ each result value key }}	
+   		<ul class="goodslist">
+                <li>
+                    <a href="#">
+                        <div class="pic">
+                            {{@  value.productImg }}
+                        </div>
+                        <div class="txt">
+                            <div class="title">
+                                {{@ value.productName }}
+                            </div>
+                            <div class="other clearfix">
+                                <span class="mall">{{@ value.productQuote }}</span>
+                                <span class="comment">{{@ value.productCom}}</span>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+   	{{ /each }}	
+   </script>
+
+</body>
+</html>

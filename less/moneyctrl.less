@@ -1,0 +1,183 @@
+@import './base.less';
+
+body,html {
+	height: 100%;
+}
+
+//导航区域
+#nav {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: #fff;
+	width: 100%;
+	> .swiper-container {
+      width: 100%;
+      > .swiper-wrapper {
+      	width: 546px;
+			ul {
+				width: 546px;
+				border-bottom: 1px solid @border-color;
+				> li {
+					float: left;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 12px;
+					white-space: nowrap;
+					&.active {
+						> a:after {
+							content: "";
+							width: 45px;
+							height: 0px;
+							display: block;
+							border-bottom: 4px solid red;
+						}
+					}
+					> a {
+						color: #333;
+						font-size: 15px;
+						font-weight: 700;
+					} 
+				}
+			}
+      }
+   }
+}
+
+//头部区域
+#header {
+	position: fixed;
+	top: 50px;
+	z-index: 999;
+	background-color: #fff;
+	height: 50px;
+	padding: 10px 9px;
+	border-bottom: 1px solid @border-color;
+	display: flex;
+	//logo区域
+	> .logo {
+		padding-top: 4px;
+		a {
+			display: block;
+			img {
+				width: 84px;
+				height: 25px;
+			}
+		}
+	}
+	//搜索区域
+	> .search {
+		flex: 1;
+		height: 30px;
+		padding: 0 20px;
+		input {
+			width: 100%;
+			height: 100%;
+			padding-left: 20px;
+			border-radius: 150px;
+			background-color: #f6f6f6;
+		} 
+	}
+	//下载区域
+	> .download {
+		width: 45px;
+		height: 30px;
+		padding:  6px;
+		border: 1px solid @main-color;
+		border-radius: 15px;
+		font-size: 14px;
+		>a {
+			color: @main-color;
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+//主体区域
+#main {
+	padding-top: 91px;
+	//图文混排渲染部分
+	> #main-picTxt {
+		> .goodslist {
+			> li {
+				width: 100%;
+				padding: 14px 8px;
+				border-bottom: 1px solid @border-color;
+				> a {
+					width: 100%;
+					display: flex;
+					> .pic {
+						> img {
+							width: 100px;
+							height: 100px;
+						}
+					}
+					> .txt {
+						flex: 1;
+						padding-left: 10px;
+						> .title {
+							font-size: 15px;
+							line-height: 24px;
+							// 利用最小高度撑开内容
+							min-height: 57px;
+							word-break: break-all;
+							color: @font-color;
+							> span {
+								color: #ff6c00;
+							}
+						}
+						> .other {
+							color: #a1a1a1;
+							padding-top: 20px;
+							> .mall {
+								font-size: 12px;
+								float: left;
+							}
+							> .comment {
+								float: right;
+								> i {
+									padding-right: 10px;
+								}
+							}
+						}
+					}
+				} 
+			}
+		}
+	}
+	//分页区域
+	#Paging {
+		padding-top: 20px;
+		background-color: #efefef;
+		> ul {
+			width: 100%;
+			display: flex;
+			> li {
+				flex: 1;
+				height: 33px;
+				position: relative;
+				> a {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%); 
+					width: 82px;
+					height: 33px;
+					line-height: 33px;
+					display: block;
+					text-align: center;
+					border: 1px solid @border-color;
+				}
+				> #selectPage {
+					position: absolute;
+					left: 50%;
+					transform: translateX(-50%); 
+					border: 1px solid #bababa;
+					font-size: 16px;
+					width: 95px;
+					height: 34px;
+				}
+			}
+		}
+	}
+}

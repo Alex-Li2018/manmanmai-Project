@@ -1,0 +1,248 @@
+@import './base.less';
+
+
+//头部区域
+#header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: #fff;
+	height: 50px;
+	padding: 10px 9px;
+	border-bottom: 1px solid @border-color;
+	display: flex;
+	//logo区域
+	> .logo {
+		padding-top: 4px;
+		a {
+			display: block;
+			img {
+				width: 84px;
+				height: 25px;
+			}
+		}
+	}
+	//搜索区域
+	> .search {
+		flex: 1;
+		height: 30px;
+		padding: 0 20px;
+		input {
+			width: 100%;
+			height: 100%;
+			padding-left: 20px;
+			border-radius: 150px;
+			background-color: #f6f6f6;
+		} 
+	}
+	//下载区域
+	> .download {
+		width: 45px;
+		height: 30px;
+		padding:  6px;
+		border: 1px solid @main-color;
+		border-radius: 15px;
+		font-size: 14px;
+		>a {
+			color: @main-color;
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+//导航区域
+#nav {
+	position: fixed;
+	z-index: 999;
+	background-color: #fff;
+	top: 50px;
+	width: 100%;
+	> .swiper-container {
+      width: 100%;
+      > .swiper-wrapper {
+      	width: 546px;
+			ul {
+				width: 546px;
+				border-bottom: 1px solid @border-color;
+				> li {
+					float: left;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 12px;
+					white-space: nowrap;
+					&.active {
+						> a:after {
+							content: "";
+							width: 45px;
+							height: 0px;
+							display: block;
+							border-bottom: 4px solid red;
+						}
+					}
+					> a {
+						color: #333;
+						font-size: 15px;
+						font-weight: 700;
+					} 
+				}
+			}
+      }
+   }
+}
+
+//主体区域
+#main {
+	padding-top: 91px;
+	> .picTxt {
+		text-align: center;
+		padding: 4px 20px;
+		img {
+			width: 201px;
+			height: 201px;
+		}
+		.info {
+			margin: 12px auto;
+			font-size: 12px;
+			color: #999;
+		}
+		h3 {
+			font-size: 18px;
+			margin: 10px auto 5px auto;
+			font-weight: 800;
+			text-align: left;
+			text-align-last: left;
+			word-break: break-all;
+			color: #5a5a5a;
+			line-height: normal;
+			&.subtitle {
+				height: 20px;
+				color: #f85000;
+				line-height: 20px;
+				overflow: hidden;
+				font-weight: normal;
+			}
+		}
+		.city {
+			//城市列表的样式
+			ul {
+				width: 120px;
+				border: 1px solid @border-color;
+				li {
+					a {
+						
+						display: block;
+						border-bottom: 1px solid @border-color;
+						span {
+							width: 115px;
+							height: 25px;
+							display: block;
+							line-height: 25px;
+							text-align: left;
+							> strong {
+								float: right;
+								color: red;
+								font-weight: 400;
+							}
+						}
+					}
+				}
+			}
+		}
+		.golink {
+			> a {
+				display: block;
+				margin: 20px 10px;
+				background: #FF9000;
+				height: 40px;
+				width: 200px;
+				border-radius: 4px;
+				line-height: 40px;
+				text-align: center;
+				font-size: 14px;
+				color: #ffffff;
+			}
+		}
+		.content {
+			font-size: 16px;
+			word-break: break-all;
+			line-height: 24px;
+			color: #606060;
+			padding-bottom: 20px;
+			> p {
+				//让最后一行居左显示
+				text-align-last: left;
+				margin-top: 5px;
+				> a {
+					color: red;
+				}
+			}
+		}
+	}
+	> .comment {
+		padding: 0 10px;
+		.tit {
+			//background-color: #f2f2f2;
+			margin-top: 10px;
+			font-weight: bold;
+			padding: 6px 8px;
+			font-size: 16px;
+		}
+		.reply {
+			> .form {
+				position: relative;
+				textarea {
+					width: 100%;
+					height: 120px;
+					border: 1px solid @border-color;
+				}
+				.ctrl {
+					position: absolute;
+					bottom: 5px;
+					right: 0;
+					> input {
+						background: #FF9000;
+						width: 80px;
+						height: 50px;
+						line-height: 50px;
+						text-align: center;
+						color: #fff;
+						font-size: 18px;
+					}
+				}
+			}
+		}
+		.list {
+			li {
+				display: flex;
+				border-bottom: 1px solid @border-color;
+				> .userimg {
+					width: 40px;
+					img {
+						width: 40px;
+						height: 40px;
+						border-radius: 20px;
+					}
+				}
+				> .con {
+					padding-left: 5px;
+					flex: 1;
+					> .name {
+						font-size: 14px;
+						color: #999;
+						.username {
+							float: left;
+						}
+						.time {
+							float: right;
+						}
+					}
+					.content {
+						font-size: 15px;
+						padding-top: 20px;
+					}
+				}
+			}		
+		}
+	}
+}

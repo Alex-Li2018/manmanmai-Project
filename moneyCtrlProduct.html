@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>省钱控商品详情页面</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/moneyCtrlProduct.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+	<!-- 3. 引入swiper插件的css -->
+	<link rel="stylesheet" href="./lib/swiper/css/swiper.min.css">
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<!-- logo区域 -->
+		<h4 class="logo">
+			<a href="index.html">
+				<img src="./images/mlogo.png" alt="">
+			</a>
+		</h4>
+		<!-- 搜索框区域 -->
+		<div class="search">
+			<input type="text" placeholder="搜索商品比价">
+		</div>
+		<!-- 下载区域 -->
+		<div class="download">
+			<a href="#">下载</a>
+		</div>
+	</header>
+	<!-- 导航区域 -->
+	<nav id="nav">
+		<div class="swiper-container">
+    		<div class="swiper-wrapper">
+      		<div class="swiper-slide">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li class="active"><a href="moneyctrl.html">省钱控</a></li>
+						<li><a href="category.html">比价搜索</a></li>
+						<li><a href="#">国内折扣</a></li>
+						<li><a href="#">查历史价</a></li>
+						<li><a href="#">白菜价</a></li>
+						<li><a href="#">小时风云榜</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- 主体部分 -->
+	<main id="main">
+		<!-- 图文混排区域 -->
+		<section class="picTxt">
+			<div class="pic">
+				<img src="./images/整动棒.jpg" alt="">
+			</div>
+			<div class="info">
+		      <span class="mall">天猫商城</span>  |
+		      <span class="addtime">10-01 22:24</span>  |  
+		      <span class="author">EG10  |  慢慢买</span> 
+      	</div>
+      	<h3 class="title">小怪兽 女性智能震动棒 哥斯拉大师</h3>
+      	<h3 class="subtitle">49元包邮（双重满减后）</h3>
+      	<div class="city"></div>
+      	<div class="golink"><a href="#" target="_blank" class="a-gobuy">直达链接</a></div>
+      	<div class="content">
+      		<!-- 内容开始 -->
+      		<p class="conn">苏宁极物这款臻品澳洲羊毛被春秋被，200*230cm和220*240cm两个尺寸，纯棉面料，澳洲羊毛填充，斜纹织就，绗缝工艺固定织物，被子总重量4.1-5斤。</p>
+      		<!-- 内容结束 -->
+      		<p class="description"><a href="#">苏宁易购</a>
+					<span>当前售价279元，价格下方领取满99-15优惠券，到手264元包邮。近期好价，有需要的慢友可入~</span>
+      		</p>
+      	</div>       
+		</section>
+		<!-- 评论区域 -->
+		<section class="comment">
+			<!-- <div class="commentTitle">最新评论</div> -->
+			<div class="commentCont">
+				<!-- 渲染出来的评论内容 -->
+			</div>
+		</section>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer">
+	  <!-- 网站底部上半部分 -->
+	  <section class="footer-up">
+	      <a href="#">登录</a>
+	      <a href="#">注册</a>
+	      <a class="goTop" href="javascript:;">
+	          <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+	          返回顶部
+	      </a>
+	  </section>
+	  <!-- 网站底部下半部分 -->
+	  <section class="footer-down">
+	      <p>
+	          <a href="#">手机APP下载</a> 
+	          <a href="#">
+	              慢慢买手机版
+	          </a> -- 掌上比价平台
+	      </p>
+	      <p>m.manmanbuy.com</p>
+	  </section>
+	</footer>
+	
+	<!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/moneyCtrlProduct.js"></script>
+	<!-- 3. 导入模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 导入swiper插件js -->
+	<script src="./lib/swiper/js/swiper.min.js"></script>
+</body>
+</html>

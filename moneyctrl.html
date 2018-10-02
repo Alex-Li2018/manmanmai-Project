@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>省钱控</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/moneyctrl.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+	<!-- 3. 引入swiper插件的css -->
+	<link rel="stylesheet" href="./lib/swiper/css/swiper.min.css">
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<!-- logo区域 -->
+		<h4 class="logo">
+			<a href="index.html">
+				<img src="./images/mlogo.png" alt="">
+			</a>
+		</h4>
+		<!-- 搜索框区域 -->
+		<div class="search">
+			<input type="text" placeholder="搜索商品比价">
+		</div>
+		<!-- 下载区域 -->
+		<div class="download">
+			<a href="#">下载</a>
+		</div>
+	</header>
+	<!-- 导航区域 -->
+	<nav id="nav">
+		<div class="swiper-container">
+    		<div class="swiper-wrapper">
+      		<div class="swiper-slide">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li class="active"><a href="moneyctrl.html">省钱控</a></li>
+						<li><a href="category.html">比价搜索</a></li>
+						<li><a href="#">国内折扣</a></li>
+						<li><a href="#">查历史价</a></li>
+						<li><a href="#">白菜价</a></li>
+						<li><a href="#">小时风云榜</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- 主体区域 -->
+	<main id="main">
+		<!-- 图文混排 -->
+		<section id="main-picTxt">
+		   <ul class="goodslist">
+		       <li>
+		           <a href="#">
+		               <div class="pic">
+		                   <img src="./images/Thumb_2018090019593873636.jpg" alt="">
+		               </div>
+		               <div class="txt">
+		                   <div class="title">
+		                       yassecoco 女士中筒袜 5双 
+		                       <span>19.8元包邮(需用券)</span>
+		                   </div>
+		                   <div class="other clearfix">
+		                       <span class="mall">天猫旗舰店 | 09-27 20:00</span>
+		                       <span class="comment"><i class="fa fa-camera-retro"></i>0</span>
+		                   </div>
+		               </div>
+		           </a>
+		       </li>
+		   </ul>
+		</section>
+		<!-- 分页实现 -->
+		<section id="Paging">
+		<ul>
+			<li><a href="javascript:;" class="prevPage" >上一页</a></li>
+			<li>
+		   <select id="selectPage" >   
+		       <!-- <option selected="selected" disabled="disabled"  
+		       style='display: none' value=''></option>   -->                        
+		   </select>       
+		</li>
+			<li><a href="javascript:;" class="nextPage">下一页</a></li>
+		</ul>
+		</section>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer">
+	  <!-- 网站底部上半部分 -->
+	  <section class="footer-up">
+	      <a href="#">登录</a>
+	      <a href="#">注册</a>
+	      <a class="goTop" href="javascript:;">
+	          <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+	          返回顶部
+	      </a>
+	  </section>
+	  <!-- 网站底部下半部分 -->
+	  <section class="footer-down">
+	      <p>
+	          <a href="#">手机APP下载</a> 
+	          <a href="#">
+	              慢慢买手机版
+	          </a> -- 掌上比价平台
+	      </p>
+	      <p>m.manmanbuy.com</p>
+	  </section>
+	</footer>
+
+
+	<!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/moneyctrl.js"></script>
+	<!-- 3. 导入模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 导入swiper插件js -->
+	<script src="./lib/swiper/js/swiper.min.js"></script>
+
+	<!-- 准备一个图文混排的模板 -->
+	<script type="text/html" id="tpl-picTxt">
+	{{ each result value key }}
+		<ul class="goodslist">
+		       <li>
+		           <a href="moneyCtrlProduct.html?productid={{@ value.productId }}">
+		               <div class="pic">
+		                   {{@ value.productImgSm }}
+		               </div>
+		               <div class="txt">
+		                   <div class="title">
+		                       {{@ value.productName}}
+		                       <span>{{@ value.productPinkage}}</span>
+		                   </div>
+		                   <div class="other clearfix">
+		                       <span class="mall">{{@ value.productFrom}} |{{@ value.productTime }}</span>
+		                       <span class="comment">
+		                       	<i class="fa fa-camera-retro"></i>
+		                       	{{@ value.productComCount.replace('有','').replace('人评论','') }}</span>
+		                   </div>
+		               </div>
+		           </a>
+		       </li>
+		   </ul>
+	{{ /each }}
+	</script>
+
+	<!-- 准备一个下拉框模板 -->
+	<script type="text/html" id="tpl-Paging"> 
+		<% for(var i = 0; i < list; i++) { %>
+			<option  value="{{@ i+1 }}">{{@ i+1 }}/{{@ list}}</option>
+		<% } %>
+	</script>
+</body>
+</html>

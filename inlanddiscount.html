@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/inlanddiscount.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<!-- logo区域 -->
+		<h4 class="logo">
+			<a href="index.html">
+				<img src="./images/mlogo.png" alt="">
+			</a>
+		</h4>
+		<!-- 搜索框区域 -->
+		<div class="search">
+			<input type="text" placeholder="搜索商品比价">
+		</div>
+		<!-- 下载区域 -->
+		<div class="download">
+			<a href="#">下载</a>
+		</div>
+	</header>
+	<!-- 导航区域 -->
+	<nav id="nav">
+		<div class="swiper-container">
+    		<div class="swiper-wrapper">
+      		<div class="swiper-slide">
+					<ul class="clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="moneyctrl.html">省钱控</a></li>
+						<li class="active"><a href="category.html">比价搜索</a></li>
+						<li><a href="#">国内折扣</a></li>
+						<li><a href="#">查历史价</a></li>
+						<li><a href="#">白菜价</a></li>
+						<li><a href="#">小时风云榜</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- 主体区域 -->
+	<main id="main">
+		<ul class="picTxt">
+			<li>
+				<a href="#">
+					<div class="img">
+						<img src="./images/包.jpg" alt="">
+					</div>	
+					<div class="title">
+						云动力 苹果笔记本电脑包15.6英寸联想戴尔Macbook air/pro内胆包T-800黑色 *2件
+					</div>
+					<div class="subtit">82.8元（合41.4元/件）</div>
+					<div class="info">                    
+						<div class="mall">京东商城 | 2018/10/2 17:14</div>                
+					</div>	
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="img">
+						<img src="./images/包.jpg" alt="">
+					</div>	
+					<div class="title">
+						云动力 苹果笔记本电脑包15.6英寸联想戴尔Macbook air/pro内胆包T-800黑色 *2件
+					</div>
+					<div class="subtit">82.8元（合41.4元/件）</div>
+					<div class="info">                    
+						<div class="mall">京东商城 | 2018/10/2 17:14</div>                
+					</div>	
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="img">
+						<img src="./images/包.jpg" alt="">
+					</div>	
+					<div class="title">
+						云动力 苹果笔记本电脑包15.6英寸联想戴尔Macbook air/pro内胆包T-800黑色 *2件
+					</div>
+					<div class="subtit">82.8元（合41.4元/件）</div>
+					<div class="info">                    
+						<div class="mall">京东商城 | 2018/10/2 17:14</div>                
+					</div>	
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<div class="img">
+						<img src="./images/包.jpg" alt="">
+					</div>	
+					<div class="title">
+						云动力 苹果笔记本电脑包15.6英寸联想戴尔Macbook air/pro内胆包T-800黑色 *2件
+					</div>
+					<div class="subtit">82.8元（合41.4元/件）</div>
+					<div class="info">                    
+						<div class="mall">京东商城 | 2018/10/2 17:14</div>                
+					</div>	
+				</a>
+			</li>
+		</ul>
+	</main>
+
+	<!-- 底部区域 -->
+	<footer id="footer">
+	  <!-- 网站底部上半部分 -->
+	  <section class="footer-up">
+	      <a href="#">登录</a>
+	      <a href="#">注册</a>
+	      <a class="goTop" href="javascript:;">
+	          <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+	          返回顶部
+	      </a>
+	  </section>
+	  <!-- 网站底部下半部分 -->
+	  <section class="footer-down">
+	      <p>
+	          <a href="#">手机APP下载</a> 
+	          <a href="#">
+	              慢慢买手机版
+	          </a> -- 掌上比价平台
+	      </p>
+	      <p>m.manmanbuy.com</p>
+	  </section>
+	</footer>
+	<!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/inlanddiscount.js"></script>
+	<!-- 3. 导入模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 导入swiper插件js -->
+	<script src="./lib/swiper/js/swiper.min.js"></script>
+
+	<!-- 准备一个模板-->
+	<script id="tpl-picTxt" type="text/html">
+		{{ each result value key }}
+			<li class='list'>
+				<a href="zhekou.html?productid={{@ value.productId}}">
+					<div class="img">
+						{{@ value.productImg }}
+					</div>	
+					<div class="title">
+						{{@ value.productName}}
+					</div>
+					<div class="subtit">{{@ value.productPrice}}</div>
+					<div class="info">                    
+						<div class="mall">{{@ value.productFrom}} | {{@ value.productTime }}</div>                
+					</div>	
+				</a>
+			</li>
+		{{ /each }}
+	</script>
+
+</body>
+</html>

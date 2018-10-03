@@ -1,0 +1,158 @@
+@import './base.less';
+
+
+//头部区域
+#header {
+	position: fixed;
+	top: 0;
+	z-index: 999;
+	background-color: #fff;
+	height: 50px;
+	padding: 10px 9px;
+	border-bottom: 1px solid @border-color;
+	display: flex;
+	//logo区域
+	> .logo {
+		padding-top: 4px;
+		a {
+			display: block;
+			img {
+				width: 84px;
+				height: 25px;
+			}
+		}
+	}
+	//搜索区域
+	> .search {
+		flex: 1;
+		height: 30px;
+		padding: 0 20px;
+		input {
+			width: 100%;
+			height: 100%;
+			padding-left: 20px;
+			border-radius: 150px;
+			background-color: #f6f6f6;
+		} 
+	}
+	//下载区域
+	> .download {
+		width: 45px;
+		height: 30px;
+		padding:  6px;
+		border: 1px solid @main-color;
+		border-radius: 15px;
+		font-size: 14px;
+		>a {
+			color: @main-color;
+			display: block;
+			text-align: center;
+		}
+	}
+}
+
+//导航区域
+#nav {
+	position: fixed;
+	z-index: 999;
+	background-color: #fff;
+	top: 50px;
+	width: 100%;
+	> .swiper-container {
+      width: 100%;
+      > .swiper-wrapper {
+      	width: 546px;
+			ul {
+				width: 546px;
+				border-bottom: 1px solid @border-color;
+				> li {
+					float: left;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 12px;
+					white-space: nowrap;
+					&.active {
+						> a:after {
+							content: "";
+							width: 45px;
+							height: 0px;
+							display: block;
+							border-bottom: 4px solid red;
+						}
+					}
+					> a {
+						color: #333;
+						font-size: 15px;
+						font-weight: 700;
+					} 
+				}
+			}
+      }
+   }
+}
+
+//主体区域
+#main {
+	padding-top: 91px;
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		>li {
+			width: 50%;
+			padding-left: 10px;
+			padding-top: 10px;
+			border-right: 1px solid @border-color;
+			border-bottom: 1px solid @border-color;
+			&:nth-child(2n) {
+				border: none;
+				border-bottom: 1px solid @border-color;
+			}
+			a {
+				display: block;
+				text-align: center;
+				img {
+					width: 140px;
+					height: 140px;
+				}
+				.title {
+					color: #333333;
+					word-break: break-all;
+					padding: 10px 8px;
+					font-size: 14px;
+					text-align: left;
+					text-align-last: left;
+					line-height: 18px;
+					height: 46px;
+					word-break: break-all;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow: hidden;		
+					font-weight: 700;		
+				}
+				.subtit {
+					color: #ff6c00;
+					margin-top: 4px;
+					font-size: 14px;
+					padding: 5px 8px;
+					text-align: left;
+					text-align-last: left;
+					word-break: break-all;
+					-webkit-line-clamp: 1;
+					-webkit-box-orient: vertical;
+					overflow: hidden;
+					height: 28px;
+					line-height: 18px;
+				}
+				.info {
+					padding-left: 8px;
+					padding-bottom:10px;
+					.mall {
+						color: #a1a1a1;
+						font-size: 12px;
+						text-align: left;
+					}
+				}
+			}
+		}
+	}
+}

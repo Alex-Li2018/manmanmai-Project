@@ -53,20 +53,20 @@ Category.prototype = {
 					function sendAjax(){
 
 						if(index > 7) {
-							//加上点击商品头部就显示商品内容,手风琴的效果
+							//加上点击商品头部就显示商品内容,手风琴的效果 单击展开双击收拢
 							$('.productList').on('click',function(){
-								
+								//单击展开双击收拢
 								var productListID = this.dataset.id;
-								$('.productDetail').each(function(index,ele){
-									if(ele.id == productListID) {
-										ele.style.display = 'table';
-										//加上向上的箭头符号
-										$('.productList').eq(productListID).find('.title').addClass('active');
-									}else {
-										ele.style.display = 'none';
-										$('.productList').eq(productListID).siblings().find('.title').removeClass('active');
-									}
-								});
+								// 手风琴的效果
+								if( $('.productDetail').eq(productListID).css('display') == 'none') {
+									$('.productDetail').eq(productListID).css('display','table');
+									//加上向上的箭头符号
+									$('.productList').eq(productListID).find('.title').addClass('active');
+								}else {
+									$('.productDetail').eq(productListID).css('display','none');
+									//去掉向上的箭头符号,变成向下的箭头
+									$('.productList').eq(productListID).find('.title').removeClass('active');
+								}
 							});
 							//超过7就退出递归
 							return;
@@ -80,10 +80,6 @@ Category.prototype = {
 							async : false,
 							data : { titleid : titleid  },
 							success :function(obj) {
-								// $('#main').css({
-								// 	background : '',
-								// 	height : ''
-								// });
 								var target = (obj.result.length%3==0)?obj.result.length/3:Math.ceil(obj.result.length/3);
 								var OBJ = {
 									target : target,
@@ -91,7 +87,7 @@ Category.prototype = {
 									//判断手风琴效果的ID
 									indexID : index
 								}
-								console.log(OBJ);
+								//console.log(OBJ);
 								//渲染到页面上
 								var productDetailHTML = template('tpl-productDetail',OBJ);	
 								$('.productList').eq(index).after(productDetailHTML);

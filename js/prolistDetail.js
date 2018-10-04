@@ -10,6 +10,8 @@
 		getPicTxtData ();
 		//渲染用户评论部分
 		getUserComment();
+		//返回顶部的功能
+		goTop();
 
 		//------渲染图文混排的内容导航--------
 		function getPicTxtData () {
@@ -28,7 +30,6 @@
 					$('.txt').text(obj.result[0].productName);
 					$('.price span').text();
 					$('#table').html(obj.result[0].bjShop)
-					//console.log(obj.result[0]);
 				}
 			});
 		}
@@ -45,11 +46,18 @@
 					//生成模板并渲染
 					var commentHTML = template('tpl-userComment',obj);
 					$('.com-title').after(commentHTML);
-					console.log(obj);
 				}
 			});
 		}
 
+		//------返回顶部的功能--------
+		function goTop (){
+		  //在行内已经阻止了a标签的默认行为
+		 	//console.log($('.goTop'));
+		  $('.goTop').on('click',function(){
+		      $('html,body').scrollTop(0);
+		  });
+		}
 
 
 

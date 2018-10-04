@@ -4,59 +4,23 @@ body,html {
 	height: 100%;
 }
 
-//导航区域
-#nav {
-	position: fixed;
-	top: 0;
-	z-index: 999;
-	background-color: #fff;
-	width: 100%;
-	> .swiper-container {
-      width: 100%;
-      > .swiper-wrapper {
-      	width: 546px;
-			ul {
-				width: 546px;
-				border-bottom: 1px solid @border-color;
-				> li {
-					float: left;
-					height: 40px;
-					line-height: 40px;
-					padding: 0 12px;
-					white-space: nowrap;
-					&.active {
-						> a:after {
-							content: "";
-							width: 45px;
-							height: 0px;
-							display: block;
-							border-bottom: 4px solid red;
-						}
-					}
-					> a {
-						color: #333;
-						font-size: 15px;
-						font-weight: 700;
-					} 
-				}
-			}
-      }
-   }
-}
-
 //头部区域
 #header {
 	position: fixed;
-	top: 50px;
+	//定位之后,宽度由内容撑开
+	top: 0px;
 	z-index: 999;
 	background-color: #fff;
 	height: 50px;
+	width: 100%;
 	padding: 10px 9px;
 	border-bottom: 1px solid @border-color;
 	display: flex;
 	//logo区域
 	> .logo {
 		padding-top: 4px;
+		width: 84px;
+		height: 25px;
 		a {
 			display: block;
 			img {
@@ -94,9 +58,50 @@ body,html {
 	}
 }
 
+//导航区域
+#nav {
+	position: fixed;
+	top: 50px;
+	z-index: 999;
+	background-color: #fff;
+	width: 100%;
+	> .swiper-container {
+      width: 100%;
+      > .swiper-wrapper {
+      	width: 546px;
+			ul {
+				width: 2000px;
+				border-bottom: 1px solid #e0e4e7;
+				> li {
+					float: left;
+					height: 40px;
+					line-height: 40px;
+					padding: 0 12px;
+					white-space: nowrap;
+					&.active {
+						> a:after {
+							content: "";
+							width: 45px;
+							height: 0px;
+							display: block;
+							border-bottom: 4px solid red;
+						}
+					}
+					> a {
+						color: #333;
+						font-size: 15px;
+						font-weight: 700;
+					} 
+				}
+			}
+      }
+   }
+}
+
 //主体区域
 #main {
-	padding-top: 91px;
+	//background-color: @border-color;
+	padding-top: 101px;
 	//图文混排渲染部分
 	> #main-picTxt {
 		> .goodslist {

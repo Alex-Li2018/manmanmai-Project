@@ -100,6 +100,13 @@ $(function(){
 				$(this).addClass('active').siblings().removeClass('active');
 				
 			});
+		},
+		//返回顶部解决办法:
+		goTop : function(){
+		  //在行内已经阻止了a标签的默认行为
+		  $('.goTop').on('click',function(){
+		      $('html,body').scrollTop(0);
+		  });
 		}
 	}	
 
@@ -107,5 +114,7 @@ $(function(){
 	moneyctrl.getPicTxtData();
 	//切换active类
 	moneyctrl.overturnActive();
+	//返回顶部的方法
+	moneyctrl.goTop();
 })
 

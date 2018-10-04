@@ -38,11 +38,21 @@ MMB.prototype = {
             success : function(result){
                 console.log(result);
                 var menuHTML = template('tpl-mainNav',result);
-                //console.log(menuHTML);
                 $('#main-menuNav').html(menuHTML);
                 //显示更多的菜单导航,9至12显示
-                $('#main-menuNav li').eq(7).on('click',function(){
-                    $('#main-menuNav li').show();
+                $('#main-menuNav li').eq(7).on('click',function(e){
+                    //阻止点击的默认行为
+                    e = e || window.event;
+                    e.preventDefault();
+                    //单击展开,双击收拢的效果
+                    if($('#main-menuNav li').eq(8).css('display') == 'none' ) {
+                        $('#main-menuNav li').show();
+                    }else {
+                        //循环遍历让8到11所有的li隐藏
+                        for(var n=1;n<5;n++) {
+                            $('#main-menuNav li').eq(7+n).css('display','none');
+                        }
+                    }  
                 })
             }
         });
@@ -63,25 +73,6 @@ MMB.prototype = {
             }
         });
     },
-
-    //悬浮窗解决办法
-    scrollMove : function(){
-        // $(window).on('scroll',function(){
-
-        //     // 获取页面滚动条滚动的高度
-        //     var scrollTop = $('html,body').scrollTop();
-        //     // 获取页面可视区的高度
-        //     var clientHeight = $('html,body').height();
-        //     // 获取悬浮窗元素的高度
-        //     var scrollsidebarHeight = $('#scrollsidebar').height();     
-
-        //     // 获取悬浮窗在页面中的定位位置
-        //     var positionY = parseInt(( clientHeight - scrollsidebarHeight ) /2 + scrollTop);
-
-        //     console.log(positionY);
-        //     //$('#scrollsidebar').css('top',positionY);
-        // });
-    }, 
 
     //返回顶部解决办法:
     goTop : function(){

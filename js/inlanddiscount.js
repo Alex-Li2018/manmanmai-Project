@@ -90,11 +90,21 @@ $(function(){
 			$('.swiper-slide li').on('click',function(){
 				$(this).addClass('active').siblings().removeClass('active');
 			});
-		}	
+		},
+
+		//返回顶部解决办法:
+		goTop : function(){
+		  //在行内已经阻止了a标签的默认行为
+		  $('.goTop').on('click',function(){
+		      $('html,body').scrollTop(0);
+		  });
+		}
 	}
 
 	//调用对象实现渲染页面的功能
 	inlanddiscount.getPicTxtData();
 	//导航栏切换active类的操作
 	inlanddiscount.overturnActive();
+	//返回顶部
+	inlanddiscount.goTop();
 })

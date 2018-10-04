@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 1. 引入自己的less文件 -->
+	<link rel="stylesheet/less" href="./less/baicaijia.less">
+	<!-- 2. 引入解析less的文件 -->
+   <script src="./lib/less/less.js"></script>
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+		<!-- logo区域 -->
+		<h4 class="logo">
+			<a href="index.html">
+				<img src="./images/mlogo.png" alt="">
+			</a>
+		</h4>
+		<!-- 搜索框区域 -->
+		<div class="search">
+			<input type="text" placeholder="搜索商品比价">
+		</div>
+		<!-- 下载区域 -->
+		<div class="download">
+			<a href="#">下载</a>
+		</div>
+	</header>
+	<!-- 导航区域 -->
+	<nav id="nav">
+		<div class="swiper-container">
+    		<div class="swiper-wrapper">
+      		<div class="swiper-slide">
+					<ul class="navUL clearfix">
+						<li><a href="index.html">首页</a></li>
+						<li><a href="moneyctrl.html">省钱控</a></li>
+						<li><a href="category.html">比价搜索</a></li>
+						<li><a href="inlanddiscount.html">国内折扣</a></li>
+						<li><a href="#">查历史价</a></li>
+						<li class="active"><a href="#">白菜价</a></li>
+						<li><a href="#">小时风云榜</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- 主体区域 -->
+	<main id="main">
+		<section id="picTxt">
+			<div class="img">
+				<img src="https://gd2.alicdn.com/imgextra/i4/2559357181/TB2eYawX43X61Bjy0FlXXaGtVXa_!!2559357181.jpg_400x400.jpg">
+			</div>
+			<div class="content">
+				<div class="tit">
+					<span class="b">[包邮]</span>藏源鹿品牌原创设计【羊毛针织】中长大衣"
+				</div>
+				<div class="subtit">
+					<i>券后</i><em>¥</em>106.0<del>¥206</del>
+				</div>
+				<div class="bar-box">
+					<div class="bar clearfix">
+						<a href="#" class="goquan" target="_blank"></a>
+						<i>
+							<em style="width:75%;"></em>
+							<span>75%</span>
+						</i>
+						<b>已领75117张</b>
+					</div>
+				</div>
+				<div class="left clearfix">
+					<a href="http://shop.m.taobao.com/shop/coupon.htm?seller_id=2213057944&activity_id=8cfb336284b5436b9f2c7c9343fa85f1" target="_blank">点此领10元优惠券</a>
+				</div>
+				<div class="right clearfix">
+					<a biz-itemid="539735809040" isconvert="1" href="https://item.taobao.com/item.htm?id=539735809040" target="_blank">下单链接</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer">
+	  <!-- 网站底部上半部分 -->
+	  <section class="footer-up">
+	      <a href="#">登录</a>
+	      <a href="#">注册</a>
+	      <a class="goTop" href="javascript:;">
+	          <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+	          返回顶部
+	      </a>
+	  </section>
+	  <!-- 网站底部下半部分 -->
+	  <section class="footer-down">
+	      <p>
+	          <a href="#">手机APP下载</a> 
+	          <a href="#">
+	              慢慢买手机版
+	          </a> -- 掌上比价平台
+	      </p>
+	      <p>m.manmanbuy.com</p>
+	  </section>
+	</footer>
+	<!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/baicaijia.js"></script>
+	<!-- 3. 导入模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 导入swiper插件js -->
+	<script src="./lib/swiper/js/swiper.min.js"></script>
+	
+	<!-- 准备一个导航栏的模板 -->
+	<script type="text/html" id="tpl-nav">
+		{{ each result value key }}
+			<li><a href="javascript:;" data-id="{{@ value.titleId }}">{{@ value.title }}</a></li>
+		{{ /each }}
+	</script>
+
+	<!-- 准备一个图文混排模板 -->
+	<script type="text/html" id="tpl-txtPic">
+		{{ each result value key }}
+		<section id="picTxt">
+			<div class="img">
+				{{@ value.productImg }}
+			</div>
+			<div class="content">
+				<div class="tit">
+					{{@ value.productName }}
+				</div>
+				<div class="subtit">
+					{{@ value.productPrice }}
+				</div>
+				<div class="bar-box">
+					{{@ value.productCouponRemain}}
+				</div>
+				<div class="left clearfix">
+					{{@ value.productCoupon }}
+				</div>
+				<div class="right clearfix">
+					{{@ value.productHref }}
+				</div>
+			</div>
+		</section>
+		{{ /each }}
+	</script>
+
+</body>
+</html>

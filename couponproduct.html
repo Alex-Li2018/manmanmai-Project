@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>优惠券详细商品网页</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/couponproduct.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+	<!-- 3. 引入swiper插件的样式 -->
+	<link rel="stylesheet" href="./lib/swiper/css/swiper.min.css">
+</head>
+<body>
+	<!-- 头部区域 -->
+    <header id="header">
+        <section id="headerUp">
+            <!-- logo 设计 -->
+            <h4>
+                <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+            </h4>
+            <!-- App下载 -->
+            <a href="#">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </section>
+        <!-- <section id="headerDown">
+            <input type="search"  id="search" placeholder="请输入你想比价的商品">
+            <button>搜索</button>   
+        </section> -->
+    </header>
+   <!-- 图片的遮罩层 -->
+	<section id="cover" style="display: none">
+		<div class="swiper-container">
+	    <div class="swiper-wrapper">
+	      <div class="swiper-slide">
+	      	<a href="#">
+	      		<img src="./images/优惠券商品.jpg" alt="">
+	      	</a>
+	      </div>
+	      <div class="swiper-slide">
+	      	<a href="#">
+	      		<img src="./images/优惠券商品.jpg" alt="">
+	      	</a>
+	      </div>
+	      <div class="swiper-slide">
+	      	<a href="#">
+	      		<img src="./images/优惠券商品.jpg" alt="">
+	      	</a>
+	      </div>
+	    </div>
+	    <!-- Add Arrows -->
+	    <div class="swiper-button-next"></div>
+	    <div class="swiper-button-prev"></div>
+	  </div>
+	</section>
+	<!-- 主体区域 -->
+	<main id="main">
+		<p>--点餐前出事手机中的优惠券,即可享受优惠--</p>
+		<!-- 图文混排区域 -->
+		<section class="picTxt">
+			<ul>
+				<li>
+					<a href="#">
+						<img src="./images/优惠券商品.jpg" alt="">
+						<div class="content">
+							<div class="name">
+								C27 两人小食组 新奥尔良烤翅2块+薯条(中)+黄金鸡块5块+劲爆鸡米花(小) 2016年10月凭肯德基优惠券
+							</div>
+							<div class="price">￥ 28</div>
+							<div class="time">有效期至10月31日</div>
+						</div>
+						<i class="fa fa-angle-right"></i>
+					</a>
+				</li>
+			</ul>
+		</section>
+	</main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <!-- 网站底部上半部分 -->
+        <section class="footer-up">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a class="goTop" href="javascript:;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+                返回顶部
+            </a>
+        </section>
+        <!-- 网站底部下半部分 -->
+        <section class="footer-down">
+            <p>
+                <a href="#">手机APP下载</a> 
+                <a href="#">
+                    慢慢买手机版
+                </a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </section>
+    </footer>
+
+   <!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/couponproduct.js"></script>
+	<!-- 3. 引入模板 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 导入swiper插件的js -->
+	<script src="./lib/swiper/js/swiper.min.js"></script>
+
+	<script type="text/html" id="tpl-picTxt">
+		{{ each result value key }}
+			<li>
+				<a href="#">
+					{{@ value.couponProductImg }}
+					<div class="content">
+						<div class="name">
+							{{@ value.couponProductName }}
+						</div>
+						<div class="price">{{@ value.couponProductPrice }}</div>
+						<div class="time">{{@ value.couponProductTime }}</div>
+					</div>
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</li>
+		{{ /each }}
+	</script>
+	
+</body>
+</html>

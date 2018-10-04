@@ -1,0 +1,29 @@
+
+@import './base.less';
+
+//主体区域
+#main {
+	#nav {
+		//padding: 5px 5px;
+		ul {
+			width: 100%;	
+			display: flex;
+			flex-wrap: wrap;
+			li {
+				width: 32%;
+				//是32%因为要个margin一些空间
+				margin-top: 5px;
+				margin-left: 5px;
+				border: 1px solid @border-color;
+				a {
+					display: block;
+					text-align: center;
+					img {
+						width: 100px;
+						height: 100px;
+					}
+				}
+			}
+		}
+	}
+}

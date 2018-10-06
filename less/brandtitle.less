@@ -1,0 +1,46 @@
+
+@import "./base.less";
+
+#main {
+	background-color: #f3f3f3;
+	//顶部导航部分
+	> #nav {
+		height: 36px;
+		background-color: #ebebeb;
+		background: gradient(linear,0 0,0 100%,from(#ffffff),to(#ebebeb));
+		border-top: solid 1px #ebebeb;
+		border-bottom: 1px solid #ccc;
+		line-height: 36px;
+		padding-left: 8px;
+		font-size: 14px;
+	}
+	//品牌大全部分
+	> .brandComplete {
+		.tit {
+			font-size: 16px;
+			color: #874604;
+			height: 40px;
+			padding-left: 10px;
+			line-height: 40px;
+			margin: 10px 5px;
+			border: 1px solid #ccc;
+			background-color: #eee;
+		}
+		.brandList {
+			padding: 0 10px;
+			> .brand {
+				a {
+					height: 40px;
+					background: url(http://www.zuyushop.com/wap/images/arrow1.gif) right center no-repeat;
+					line-height: 40px;
+					color: #000;
+					font-size: 16px;
+					font-weight: 700;
+					display: block;
+					padding-left: 0px;
+					border-bottom: 1px solid #ccc;
+				}
+			}
+		}
+	}
+}

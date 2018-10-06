@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<title>Document</title>
+	<!-- 引入字体图表库 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 1. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/brandtitle.less">
+	<!-- 2. 引入解析less的文件 -->
+	<script src="./lib/less/less.js"></script>
+</head>
+<body>
+	<!-- 头部区域 -->
+	<header id="header">
+	  <section id="headerUp">
+	      <!-- logo 设计 -->
+	      <h4>
+	          <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+	      </h4>
+	      <!-- App下载 -->
+	      <a href="#">
+	          <img src="./images/header_app.png" alt="">
+	      </a>
+	  </section>
+	  <section id="headerDown">
+	      <input type="search"  id="search" placeholder="请输入你想比价的商品">
+	      <button>搜索</button>   
+	  </section>
+	</header>
+	<!-- 主体区域 -->
+	<main id="main">
+		<!-- 头部导航 -->
+		<section id="nav">
+       	<a href="index.html" class="f12">首页</a> &gt; 
+       	<a href="#" class="f12">品牌大全</a> &gt; 
+		</section>
+		<!-- 品牌大全区域 -->
+		<section class="brandComplete">
+			<div class="tit">热门品牌排行</div>
+			<div class="brandList">
+				<div class="brand">
+					<a href="#">平板电视十大品牌</a>
+				</div>
+				<div class="brand">
+					<a href="#">平板电视十大品牌</a>
+				</div>
+			</div>
+		</section>
+	</main>
+	<!-- 底部区域 -->
+	<footer id="footer">
+	  <!-- 品牌排行榜 -->
+	  <!-- <section  class="main-recommend clearfix">
+	      <span>品牌排行榜</span>
+	      <img src="./images/more.png" alt="">
+	  </section> -->
+	  <!-- 网站底部上半部分 -->
+	  <section class="footer-up">
+	      <a href="#">登录</a>
+	      <a href="#">注册</a>
+	      <a class="goTop" href="javascript:;">
+	          <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+	          返回顶部
+	      </a>
+	  </section>
+	  <!-- 网站底部下半部分 -->
+	  <section class="footer-down">
+	      <p>
+	          <a href="#">手机APP下载</a> 
+	          <a href="#">
+	              慢慢买手机版
+	          </a> -- 掌上比价平台
+	      </p>
+	      <p>m.manmanbuy.com</p>
+	  </section>
+	</footer>
+	<!-- 1. 引入zepto文件 -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入自己的js文件 -->
+	<script src="./js/brandtitle.js"></script>
+	<!-- 3. 导入模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+
+	<!-- 4. 准备一个模板 -->
+	<script type="text/html" id="tpl-brand">
+		{{ each result value key }}
+			<div class="brand">
+				<a href="brandTop.html?brandTitleId={{@ value.brandTitleId }}">{{@ value.brandTitle }}</a>
+			</div>
+		{{ /each }}
+	</script>
+</body>
+</html>

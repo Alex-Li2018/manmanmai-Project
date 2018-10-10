@@ -62,39 +62,43 @@
 	> .swiper-container {
       width: 100%;
       > .swiper-wrapper {
-      	width: 546px;
-			ul {
-				width: 546px;
-				border-bottom: 1px solid @border-color;
-				> li {
-					float: left;
+      	width: 100%;
+      	.swiper-slide {
+      		width: 2000px;
+      		ul {
+					width: auto;
 					height: 40px;
-					line-height: 40px;
-					padding: 0 12px;
-					white-space: nowrap;
-					&.active {
-						> a:after {
-							content: "";
-							width: 45px;
-							height: 0px;
-							display: block;
-							border-bottom: 4px solid red;
+					border-bottom: 1px solid @border-color;
+					> li {
+						float: left;
+						height: 40px;
+						line-height: 40px;
+						padding: 0 12px;
+						white-space: nowrap;
+						&.active {
+							> a:after {
+								content: "";
+								width: 45px;
+								height: 0px;
+								display: block;
+								border-bottom: 4px solid red;
+							}
 						}
+						> a {
+							color: #333;
+							font-size: 15px;
+							font-weight: 700;
+						} 
 					}
-					> a {
-						color: #333;
-						font-size: 15px;
-						font-weight: 700;
-					} 
 				}
-			}
+      	}
       }
    }
 }
 
 //主体区域
 #main {
-	padding-top: 91px;
+	padding-top: 101px;
 	ul {
 		display: flex;
 		flex-wrap: wrap;

@@ -61,32 +61,40 @@
 	> .swiper-container {
       width: 100%;
       > .swiper-wrapper {
-      	width: 800px;
-			ul {
-				width: 2000px;
-				border-bottom: 1px solid @border-color;
-				> li {
-					float: left;
-					height: 40px;
-					line-height: 40px;
-					padding: 0 12px;
-					white-space: nowrap;
-					&.active {
-						> a:after {
-							content: "";
-							width: 45px;
-							height: 0px;
-							display: block;
-							border-bottom: 4px solid red;
+      	width: 100%;
+      	> .swiper-slide {
+      		width: 2000px;
+      		ul {
+					width: 2000px;
+					border-bottom: 1px solid @border-color;
+					> li {
+						float: left;
+						height: 40px;
+						line-height: 40px;
+						padding: 0 12px;
+						white-space: nowrap;
+						&.active {
+							position: relative;
+							> a:after {
+								content: "";
+								display: block;
+								width: 25px;
+								height: 4px;
+								background: #f85000;
+								position: absolute;
+								bottom: 0;
+								left: 50%;
+								margin-left: -12px;
+							}
 						}
+						> a {
+							color: #000;
+							font-size: 15px;
+							//font-weight: 400;
+						} 
 					}
-					> a {
-						color: #000;
-						font-size: 15px;
-						//font-weight: 400;
-					} 
 				}
-			}
+      	}
       }
    }
 }

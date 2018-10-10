@@ -106,6 +106,26 @@ i {
            height: 30px;  
            font-size: 14px;
         }
+        //搜索历史
+        > .search-history {
+            position: absolute;
+            top: 40px;
+            left: 15px;
+            z-index: 999;
+            ul {
+                background-color: #fff;
+                border: 1px solid @border-color;
+                li {
+                   color: #000;
+                   line-height: 30px;
+                   padding: 0 5px;
+                   text-align: center;
+                   &.active {
+                       background-color: @border-color; 
+                   }
+                }
+            }
+        }
         // 搜索按钮
         > button {
             position: absolute;
@@ -191,6 +211,7 @@ i {
     position: fixed;
     top: 600px;
     right: 0;
+    display: none;
     > .appDownload {
         display: block;
         > img {

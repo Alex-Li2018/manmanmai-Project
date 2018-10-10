@@ -55,39 +55,46 @@
 //导航区域
 #nav {
 	position: fixed;
+	top: 50px;
 	z-index: 999;
 	background-color: #fff;
-	top: 50px;
 	width: 100%;
 	> .swiper-container {
       width: 100%;
       > .swiper-wrapper {
-      	width: 546px;
-			ul {
-				width: 2000px;
-				border-bottom: 1px solid @border-color;
-				> li {
-					float: left;
+      	width: 100%;
+      	> .swiper-slide {
+      		width: auto;
+	      	ul {
 					height: 40px;
-					line-height: 40px;
-					padding: 0 12px;
-					white-space: nowrap;
-					&.active {
-						> a:after {
-							content: "";
-							width: 45px;
-							height: 0px;
-							display: block;
-							border-bottom: 4px solid red;
+					border-bottom: 1px solid #e0e4e7;
+					> li {
+						float: left;
+						height: 40px;
+						line-height: 40px;
+						padding: 0 12px;
+						white-space: nowrap;
+						&.active {
+							position: relative;
+							> a:after {
+								content: "";
+								display: block;
+								width: 25px;
+								height: 4px;
+								background: #f85000;
+								position: absolute;
+								bottom: 0;
+								left: 50%;
+								margin-left: -12px;
+							}
 						}
+						> a {
+							color: #333;
+							font-size: 15px;
+						} 
 					}
-					> a {
-						color: #333;
-						font-size: 15px;
-						font-weight: 700;
-					} 
 				}
-			}
+      	}
       }
    }
 }

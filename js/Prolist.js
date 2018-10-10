@@ -41,6 +41,10 @@
 
 		 //获取下一页的页码
 	    var currentPageId = pageid + 1;
+	    if(currentPageId >= 19) {
+	    	 $('#selectPage').val(19);
+	    	return;
+	    }
 	    pageid = currentPageId;
 
 	    //设置下拉框的显示内容是当前的页码数
@@ -52,6 +56,10 @@
 	function getPreProductlistData() {
 
 	    var currentPageId = pageid - 1;
+	    if(currentPageId <= 0) {
+	    	 $('#selectPage').val(1);
+	    	return;
+	    }
 	    pageid = currentPageId;
 
 	    //$('#selectPage').find('option[value="' + currentPageId + '"]').attr('selected', 'true');

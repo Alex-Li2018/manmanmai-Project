@@ -12,25 +12,28 @@
     <!-- 2. 引入解析less的文件 -->
     <script src="./lib/less/less.js"></script>
 </head>
-
 <body>
-
 	<!-- 头部区域 -->
-	 <header id="header">
-	     <section id="headerUp">
-	         <!-- logo 设计 -->
-	         <h4>
-	             <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
-	         </h4>
-	         <!-- App下载 -->
-	         <a href="#">
-	             <img src="./images/header_app.png" alt="">
-	         </a>
-	     </section>
-	     <section id="headerDown">
-	         <input type="search"  id="search" placeholder="请输入你想比价的商品">
-	         <button>搜索</button>   
-	     </section>
+    <header id="header">
+        <section id="headerUp">
+            <!-- logo 设计 -->
+            <h4>
+                <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+            </h4>
+            <!-- App下载 -->
+            <a href="#">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </section>
+        <section id="headerDown">
+            <input type="search"  id="search-input" placeholder="请输入你想比价的商品">
+            <div class="search-history">
+                <ul>
+                    
+                </ul>
+            </div>
+            <button id="search-btn">搜索</button>   
+        </section>
     </header>
 
     <!-- 主体部分 -->
@@ -133,6 +136,8 @@
    <script src="./lib/artTemplate/template-web.js"></script>
    <!-- 3. 引入自己的js文件 -->
    <script src="./js/Prolist.js"></script>
+   <!-- 3. 引入搜索处理js文件 -->
+   <script src="./js/search.js"></script>
    
 
    <!-- 准备一个模板 -->

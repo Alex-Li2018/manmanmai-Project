@@ -2,7 +2,7 @@
 $(function () {
     // 入口函数
     var mmb = new MMB();
-
+    
     //调用方法请求数据渲染菜单导航页面
     mmb.get_mainNavData();
 
@@ -14,6 +14,8 @@ $(function () {
 
     //一键返回顶部
     mmb.goTop();
+
+    mmb.scrollsidebar();
 
 });
 
@@ -81,6 +83,20 @@ MMB.prototype = {
         $('.goTop').on('click',function(){
             $('html,body').scrollTop(0);
         });
+    },
+
+    //悬浮窗解决方案:
+    scrollsidebar : function(){
+        window.onscroll = function(){
+            //页面滚动高度与600比较
+            if($('html,body').scrollTop() > 600) {
+                //显示悬浮窗
+                $('#scrollsidebar').show(2000);
+            }else {
+                //隐藏悬浮窗
+                $('#scrollsidebar').hide(2000);
+            }
+        }
     }
 }
 

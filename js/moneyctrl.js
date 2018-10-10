@@ -66,7 +66,7 @@ $(function(){
 						$('.nextPage').on('click',function(){
 
 							var currentPageId = pageid + 1;
-							if(currentPageId >= pageNum) { //如果下一页大于总页数不执行下面的程序
+							if(currentPageId > pageNum) { //如果下一页大于总页数不执行下面的程序
 								return;
 							}
 						    pageid = currentPageId;

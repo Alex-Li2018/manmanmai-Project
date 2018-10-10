@@ -37,7 +37,7 @@ $(function(){
 				//监听页面滚动事件
 				window.onscroll = function(){
 					//如果页面滚动的高度大于页面内容ul的高度就继续渲染内容
-					if(getScrollTop() == getRefreshfHeight() ) {
+					if(getScrollTop() >= getRefreshfHeight() ) {
 						//console.log('我在加载刷新中');
 						// 继续发送ajax来渲染页面
 						$.ajax({

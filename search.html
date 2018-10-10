@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>搜索页面</title>
+    <!-- 1. 引入mui的css -->
+	<link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+	<!-- 2. 引入字体图标 -->
+	<link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+	<!-- 3. 引入less文件 -->
+	<link rel="stylesheet/less" href="./less/search.less">
+	<!-- 4. 引入less文件解析的js -->
+	<script src="./lib/less/less.js"></script>
+</head>
+<body>
+    <!-- 头部区域 -->
+    <header id="header">
+        <section id="headerUp">
+            <!-- logo 设计 -->
+            <h4>
+                <a href="index.html"><img src="./images/header_logo.png" alt=""></a>
+            </h4>
+            <!-- App下载 -->
+            <a href="search.html">
+                <img src="./images/header_app.png" alt="">
+            </a>
+        </section>
+        <section id="headerDown">
+            <input type="search"  id="search" placeholder="请输入你想比价的商品">
+            <button>搜索</button>   
+        </section>
+    </header>
+    <!-- 主体区域 -->
+    <main id="main">
+        <!-- 搜索表单 -->
+        <section class="search-form">
+            <input type="search" placeholder="请输入要搜索的商品" id="search-input">
+            <button type="button" class="mui-btn mui-btn-primary" id="search-btn">搜索</button>
+        </section>
+        <!-- 搜索历史 -->
+        <section class="search-history">
+            <div class="tit mui-clearfix">
+                <span class="mui-pull-left">搜索历史</span>
+                <a href="#" class="mui-pull-right clearTrash">
+                    <i class="fa fa-trash"></i>清空历史
+                </a>
+            </div>
+            <div class="content">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>9999</span>
+                        </a>
+                        <i class="fa fa-close" id="delbtn"></i>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <!-- 品牌排行榜 -->
+        <section  class="main-recommend clearfix">
+            <span>品牌排行榜</span>
+            <img src="./images/more.png" alt="">
+        </section>
+        <!-- 网站底部上半部分 -->
+        <section class="footer-up">
+            <a href="#">登录</a>
+            <a href="#">注册</a>
+            <a class="goTop" href="javascript:;">
+                <img src="http://www.zuyushop.com/wap/images/top.jpg" width="15" height="15">    
+                返回顶部
+            </a>
+        </section>
+        <!-- 网站底部下半部分 -->
+        <section class="footer-down">
+            <p>
+                <a href="#">手机APP下载</a> 
+                <a href="#">
+                    慢慢买手机版
+                </a> -- 掌上比价平台
+            </p>
+            <p>m.manmanbuy.com</p>
+        </section>
+    </footer>
+
+    <!-- 准备一个模板生成历史记录 -->
+    <script type="text/html" id="tpl-content">
+        {{each list value index}} 
+            <li>
+                <a href="#">
+                    <span>{{@ value}}</span>
+                </a>
+                <i class="fa fa-close" id="delbtn" data-id="{{@ index }}"></i>
+            </li>
+        {{ /each }}
+    </script>
+
+    <!-- 1. 引入zepto里的js -->
+	<script src="./lib/zepto/zepto.min.js"></script>
+	<!-- 2. 引入mui的js -->
+	<script src="./lib/mui/js/mui.min.js"></script>
+	<!-- 3. 模板引擎 -->
+	<script src="./lib/artTemplate/template-web.js"></script>
+	<!-- 4. 引入自己的js -->
+	<script src="./JS/search.js"></script>
+</body>
+</html>

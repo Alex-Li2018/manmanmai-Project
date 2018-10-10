@@ -26,8 +26,13 @@
             </a>
         </section>
         <section id="headerDown">
-            <input type="search"  id="search" placeholder="请输入你想比价的商品">
-            <button>搜索</button>   
+            <input type="search"  id="search-input" placeholder="请输入你想比价的商品">
+            <div class="search-history">
+                <ul>
+                    
+                </ul>
+            </div>
+            <button id="search-btn">搜索</button>   
         </section>
     </header>
     <!-- 主体区域 -->
@@ -111,6 +116,8 @@
     <script src="./lib/zepto/zepto.min.js"></script>
     <!-- 2. 引入自己的js文件 -->
     <script src="./js/index.js"></script>
+    <!-- 3. 引入搜索处理js文件 -->
+    <script src="./js/search.js"></script>
     <!-- 3. 导入模板引擎 -->
     <script src="./lib/artTemplate/template-web.js"></script>
 

@@ -58,7 +58,4 @@
 		      $('html,body').scrollTop(0);
 		  });
 		}
-
-
-
 }())
